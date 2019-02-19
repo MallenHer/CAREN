@@ -1,0 +1,37 @@
+<h2>Registrarse</h2>
+
+<form action="/signup" method="post">
+  <p>
+    Nombre:
+    <input value="{{name}}" name="name" type="text">
+  </p>
+  
+  <p>
+    Apellido:
+    <input value="{{last}}" name="lastname" type="text">
+  </p>
+  
+  <p>
+    Usuario:
+    <input value="{{username}}" name="username" type="text">
+    <p style="color:red"> {{errors.username}} </p>
+  </p>
+  <p>
+    Correo Electronico
+    <input value="{{email}}" name="email" type="email">
+    <p style="color:red"> {{errors.email}} </p>
+  </p>
+  <p>
+    Contraseña
+    <input value="{{password}}" name="password" type="password">
+    <p style="color:red"> {{errors.password}} </p>
+  </p>
+  <p>
+    Repetir Contraseña
+  <input  name="password2" type="password">
+  </p>
+  <p>
+    
+  </p>
+  <input type="submit"
+</form>

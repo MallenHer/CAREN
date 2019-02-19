@@ -1,0 +1,20 @@
+<h2>INGRESAR</h2>
+
+<p style="color:red"> {{error}} </p>
+<form action="/login" method="post">
+  <p>
+    Correo
+    <input name="email" type="email">
+  </p>
+  <p>
+    Contraseña
+    <input name="password" type="password">
+  </p>
+  <input type="submit">
+</form>
+
+<a href="/facebook/login">
+  <button style="background:#3b5998;color:white">
+    Login con Facebook
+  </button>
+</a>

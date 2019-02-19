@@ -1,0 +1,55 @@
+
+a {
+  color: #00b7ff;
+}
+
+
+html {
+  margin: 0 ;
+  padding: 0;
+}
+
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #ddd;
+  color: black;
+}
+
+
+section {
+  padding:0;
+  display: block;
+}
+
+.home-head{
+  position: absolute;
+  opacity: 40;
+  transition-property: opacity;
+  height: 100%;
+  width: 100%;
+}
+
