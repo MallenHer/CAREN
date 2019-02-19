@@ -21,7 +21,7 @@ function isLoggedIn(req,res,next){
   if(req.isAuthenticated()){
     next()
   }else{
-    res.redirect('/login?next=' + req.path)
+    res.redirect(  '/login?next=' + req.path)
   }
 }
 
