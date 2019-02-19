@@ -30,7 +30,7 @@ const app = express();
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
-app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.urlencoded({ extended: true }));
 app.use(cookieParser());
 
 //session
@@ -72,6 +72,8 @@ app.locals.title = 'Express - Generated with IronGenerator';
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
+const project = require('./routes/project');
+app.use('/project', project);
 app.use('/', auth);
 app.use('/', index);
 
