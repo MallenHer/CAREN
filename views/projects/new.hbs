@@ -1,0 +1,63 @@
+{{#if message}}
+<h2 style="background:green;color:white;height:40px" >{{message}}</h2>
+{{/if}}
+
+<h2>Crear Nuevo Proyecto</h2>
+<form action="/projects/new" method="post">
+  <p>
+    Name:
+    <input name="name" type="text">
+  </p>
+
+  <p>
+    Project Name:
+    <input name="projectName" type="text">
+  </p>
+  <p>
+    Recurses:
+    <input name="recursos" type="text">
+  </p>
+    <p>
+    Type:
+    <input name="name" type="text">
+  </p>
+
+  <p>
+    Description:
+    <input name="description" type="text">
+  </p>
+
+  <p>
+    Img:
+    <input name="picture" type="text">
+  </p>
+
+  <div id="map"></div>
+   <input type="text" name="address[coordinates][0]" hidden="true" id="lng" >
+   <input type="text" name="address[coordinates][1]" hidden="true" id="lat" >
+
+  <input type="submit" value="Crear">
+</form>
+
+
+
+
+<script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
+<script>
+  mapboxgl.accessToken = 'pk.eyJ1IjoiZGl1cml2aiIsImEiOiJjanAxdjA2cTQwMGp1M2tvYzZmZGp3bWc3In0.4cZEyLkU2ikqx_wb4A1z8A';
+  const map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+  })
+  const geoCoder = new MapboxGeocoder({
+    accessToken: mapboxgl.accessToken
+  })
+  map.addControl(geoCoder)
+
+  geoCoder.on('result', res => {
+    document.getElementById('lng').value = res.result.center[0]
+    document.getElementById('lat').value = res.result.center[1]
+  })
+
+</script>

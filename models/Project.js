@@ -8,6 +8,7 @@ let projectSchema = new Schema ({
   tipo:Array,
   img:String,
   description:String,
+  join: Number,
   address: {
     location: {
       type: String,

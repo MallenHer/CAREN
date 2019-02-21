@@ -1,0 +1,10 @@
+<h2>Projects</h2>
+<section>
+  {{#each projects as |project|}}
+  <a href="/projects/detail/{{project._id}}">
+    <img width="50" src="{{project.img}}" alt="img">
+    <p>{{project.projectName}}</p>
+  </a>
+  <a href="/projects{{project._id}}">editar</a>
+  {{/each}}
+</section>

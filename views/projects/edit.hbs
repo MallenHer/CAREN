@@ -1,0 +1,19 @@
+<h2>Cambiar Proyecto</h2>
+<form action="/projects/projects/{{_id}}" method="post">
+
+  <p>
+    Project Name:
+    <input value="{{projectName}}" name="projectName" type="text">
+  </p>
+  <p>
+    Cambia la foto
+    <input value="{{img}}" type="text" name="img">
+  </p>
+  <input type="submit" value="Cambiar">
+
+</form>
+<a href="/projects/projects">
+  <button>
+    Regresar
+  </button>
+</a>
