@@ -2,18 +2,19 @@
 
 
 <section class="container">
-    <div id="map1"></div>
+<div class="card">
     <img class:"img1" src="{{img}}" alt="img">
     <h2>{{projectName}}</h2>
     <p>{{description}}</p>
     <p>{{tipo}}</p>
     <p>{{recursos}}</p>
     
-    
+    <div id="map1"></div>
    <input type="text" name="address[coordinates][0]" hidden="true" id="lng" >
    <input type="text" name="address[coordinates][1]" hidden="true" id="lat" >
 
     <p>{{join}}</p>
+</div>
 
 </section>
 
@@ -44,11 +45,7 @@ body{
 }
 .container{
   display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  
+  justify-content: space-around;
 }
 
 .card{
@@ -85,14 +82,11 @@ p{
 <script src='https://api.mapbox.com/mapbox-gl-js/plugins/mapbox-gl-geocoder/v3.1.0/mapbox-gl-geocoder.min.js'></script>
 <script src='https://api.mapbox.com/mapbox-gl-js/v0.53.0/mapbox-gl.js'></script>
 <script>
-  {{!-- let uno = project.address[coordinates][0]
-  let dos = project.address[coordinates][1] --}}
+  let uno =
   mapboxgl.accessToken = 'pk.eyJ1IjoiZGl1cml2aiIsImEiOiJjanAxdjA2cTQwMGp1M2tvYzZmZGp3bWc3In0.4cZEyLkU2ikqx_wb4A1z8A';
   const map = new mapboxgl.Map({
     container: 'map1',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [uno, dos],
-    zoom: 7
   })
   const geoCoder = new MapboxGeocoder({
     accessToken: mapboxgl.accessToken
