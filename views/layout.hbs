@@ -26,10 +26,47 @@
 
 </head>
 <body>
+<!--NAVBAR-->
+
+    {{#if loggedUser}}
+
+   <div class="nav">
+      <ul>
+        <li class=""><a href="/">Home</a></li>
+        <li class=""><a href="/profile">Profile</a></li>
+        <li class=""><a href="#" class="scroll-link" data-id="about" >About Us</a></li>
+        <li class=""><a href="/projects/new">New Project</a></li>
+        <li class=""><a href="#" class="scroll-link" data-id="portfolio" >Projects</a></li>
+        <li class="contact"><a href="#" class="scroll-link" data-id="contact">Contact</a></li>
+      </ul>
+      <ul>
+      <li class=""><a href="/logout">Logout</a></li>
+      </ul>
+    </div>
+
+    {{else}}
+
+   <div class="nav">
+      <ul>
+        <li class=""><a href="/">Home</a></li>
+        <li class=""><a href="#" class="scroll-link" data-id="about" >About Us</a></li>
+        <li class=""><a href="/projects/new">New Project</a></li>
+        <li class=""><a href="#" class="scroll-link" data-id="portfolio" >Projects</a></li>
+        <li class="contact"><a href="#" class="scroll-link" data-id="contact">Contact</a></li>
+      </ul>
+      <ul>
+      <li class=""><a href="/login">Login</a></li>
+      <li class=""><a href="/signup">Sign up</a></li>
+      </ul>
+    </div>
+
+    {{/if}}
+
+
+
 
 
 {{{body}}}
-
 
 
 

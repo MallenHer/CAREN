@@ -1,10 +1,63 @@
-<h2>Projects</h2>
-<section>
+<h2 class="tite">Projects</h2>
+
+
+<section class="container">
   {{#each projects as |project|}}
+
+  <div class="card">
   <a href="/projects/detail/{{project._id}}">
-    <img width="50" src="{{project.img}}" alt="img">
-    <p>{{project.projectName}}</p>
+    <img width="" src="{{project.img}}" alt="img">
+    <div class="w3-container w3-center">
+      <p class="projectname">{{project.projectName}}</p>
+      <p class="projectname">{{project.description}}</p>
+    </div>
   </a>
-  <a href="/projects{{project._id}}">editar</a>
+  </div>
+
   {{/each}}
-</section>
+  </section>
+
+
+
+
+<style>
+body{
+  background-image: url("https://chuckphotography.files.wordpress.com/2013/02/hands-ww-2.jpg");
+  backface-visibility: hidden;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card{
+  border: 1px solid black;
+  justify-content: space-around;
+  width: 200px;
+  height: 200px;
+  top:50px;
+  background-color: rgb(104, 39, 104);
+  opacity: .5;
+}
+
+
+.card:hover{
+  background-color: rgba(105, 109, 107, 0.5);
+  opacity: 1;
+
+}
+
+p{
+  text-decoration: none;
+  color: white;
+}
+
+.projectname{
+  text-align: center;
+}
+
+</style>
+
+
+
+

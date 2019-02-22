@@ -1,3 +1,54 @@
-<img width="400" src="{{img}}" alt="">
-<p>{{nameProject}}</p>
+
+<section class="container">
+  {{#each projects as | project |}}
+
+    <img width="50" src="{{project.img}}" alt="img">
+    <h3>{{project.projectName}}</h3>
+    <p>{{project.description}}</p>
+    <p>{{project.tipo}}</p>
+    <p>{{project.recursos}}</p>
+    <p>{{project.address}}</p>
+    <p>{{project.join}}</p>
+
+ {{/each}}
+</section>
+
+
+<style>
+body{
+  background-image: url("https://chuckphotography.files.wordpress.com/2013/02/hands-ww-2.jpg");
+  backface-visibility: hidden;
+}
+.container{
+  display: flex;
+  justify-content: space-around;
+}
+
+.card{
+  border: 1px solid black;
+  justify-content: space-around;
+  width: 200px;
+  height: 200px;
+  top:50px;
+  background-color: rgb(104, 39, 104);
+  opacity: .5;
+}
+
+
+.card:hover{
+  background-color: rgba(105, 109, 107, 0.5);
+  opacity: 1;
+
+}
+
+p{
+  text-decoration: none;
+  color: white;
+}
+
+.projectname{
+  text-align: center;
+}
+
+</style>
 

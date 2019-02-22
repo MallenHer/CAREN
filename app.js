@@ -67,15 +67,25 @@ app.use(passport.session())
 
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
+app.locals.loggedUser = false
 
+function isLogged(req, res, next) {
+  if (req.isAuthenticated()) {
+    app.locals.loggedUser = true
+    next()
+  } else {
+    app.locals.loggedUser = false
+    next()
+  }
+}
 
 
 const index = require('./routes/index');
 const auth = require('./routes/auth');
 const project = require('./routes/project');
-app.use('/projects', project);
-app.use('/', auth);
-app.use('/', index);
+app.use('/projects', isLogged, project);
+app.use('/',isLogged, auth);
+app.use('/',isLogged, index);
 
 
 module.exports = app;

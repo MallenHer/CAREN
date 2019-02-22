@@ -3,9 +3,6 @@ const passport = require('passport')
 
 
 
-
-
-
 passport.use(User.createStrategy()) //primer estrategia (local)
 
 passport.serializeUser(User.serializeUser())

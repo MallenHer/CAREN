@@ -5,7 +5,7 @@ let projectSchema = new Schema ({
   name:String,
   projectName:String,
   recursos:String,
-  tipo:Array,
+  tipo:String,
   img:String,
   description:String,
   join: Number,
