@@ -9,10 +9,10 @@
 
  
   <section class="background"></section>
-  {{#if photoURL}}
+  {{#if img}}
   <div class="pic">
     <div id="editPic">EDITAR</div>
-    <img src="{{photoURL}}" alt="{{username}}">
+    <img src="{{img}}" alt="{{username}}">
   </div>
   
   {{else}}
@@ -96,7 +96,7 @@ document.getElementById('cambia').value = 'Save';
   <div class="col-sm-6">
     <div class="tarjeta1">
       <div class="card-one">
-        <a href="#" class="btn btn-primary">Universal Projects</a>
+        <a href="/projects/projects" class="btn btn-primary">Projects</a>
       </div>
     </div>
   </div>
@@ -105,7 +105,7 @@ document.getElementById('cambia').value = 'Save';
   <div class="col-sm-6">
     <div class="tarjeta2">
       <div class="card-two">
-        <a href="#" class="btn btn-primary">My projects</a>
+        <a href="/projects/new" class="btn btn-primary">Create Project</a>
       </div>
     </div>
   </div>
@@ -146,10 +146,21 @@ document.getElementById('cambia').value = 'Save';
 
 
 <style>
+  body{
+    background-image: url("https://c.wallhere.com/photos/3a/6b/children_road_Nebraska_Jake_Olson_playing_sunlight_depth_of_field_toys-176289.jpg!d")
+  }
+
+  .card-text{
+    color: black;
+  }
+  .card-title{
+    color: black;
+  }
+
 .img2{
   margin-left: 900px;
   margin-top: -150px;
-  opacity: .5;
+  opacity: .9;
 }
 .img1{
   margin-left:250px;
@@ -171,23 +182,29 @@ document.getElementById('cambia').value = 'Save';
   height: 500px;
   width: 1150px;
   background-color: rgb(116, 111, 111);
-  opacity: .2;
+  opacity: .4;
   position: absolute;
   margin-left: 0px;
-  margin-top: -160px;
+  margin-top: 60px;
 
 }
 .adios{
-  opacity: .5;
+  opacity: .8;
+  height: 50px;
+  width: 60px;
+
   
 }
 .hola{
-  opacity: .5 ;
+  opacity: .8;
+  height: 50px;
+  width: 60px;
+  align-content: center;
 }
   
 
 .text{
-opacity: .5; 
+opacity: .8; 
 height: 50px;
 width: 400px;
 }
@@ -204,9 +221,10 @@ margin-left: 200px;
 margin-top: -150px;
 
 
+
 }
 .card-body{
-  margin-top: 170px;
+  margin-top: 250px;
 }
 
 
@@ -216,12 +234,12 @@ margin-top: -150px;
   height: 160px;
   position: absolute;
   margin-left: 475px;
-  margin-top:-150px;
+  margin-top:90px;
   opacity: 150;
 }
 
 .pic div{
-  background-color: yellow;
+  background-color:blanchedalmond;
   width: 100%;
   height: 100%;
   position: absolute;
@@ -250,18 +268,4 @@ margin-top: -150px;
 }
 
 
-html{
-  margin:0;
-  padding: 0;
-}
-
-body {
-  margin: 0;
-  // padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
-}
 </style>

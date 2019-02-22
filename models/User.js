@@ -11,7 +11,10 @@ let userSchema = new Schema ({
   password:String,
   name:String,
   last:String,
-  img:String,
+  img:{
+    type: String,
+    default: "https://cdn1.iconfinder.com/data/icons/business-users/512/circle-512.png"
+  },
   address: {
     location: {
       type: String,

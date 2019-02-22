@@ -2,6 +2,9 @@
 const router = require('express').Router()
 const User = require('../models/User')
 const passport = require('passport')
+const uploadCloud = require("../helpers/cloudinary")
+
+
 
 function isLogged(req, res, next) {
   if (req.isAuthenticated()) return next()
@@ -48,6 +51,24 @@ router.get('/profile', isLogged, (req, res, next) => {
       res.render('auth/profile', { error })
     })
 })
+
+
+//PROFILE
+router.post('/profile',  
+isLogged, 
+uploadCloud.single('/profile'),
+(req,res)=>{
+  if(req.files.cover) {
+ req.body.profile = req.files.profile[0].url
+  } 
+  User.findByIdAndUpdate(req.user._id, req.body)
+ .then(()=>{
+    res.redirect('/profile')
+  })
+})
+
+
+
 
 // router.get('/profile/:id')
 

@@ -2,6 +2,8 @@ let router = require('express').Router()
 let Post = require('../models/Project')
 
 
+
+
 router.post('/projects/:id', (req,res,next)=>{
   Post.findByIdAndUpdate(req.params.id, req.body, {new:true})
   .then(post=>res.redirect('/projects'))
@@ -9,11 +11,11 @@ router.post('/projects/:id', (req,res,next)=>{
 })
 
 router.get('/detail/:id', (req,res,next)=>{
-  console.log('que pedo')
   Post.findById(req.params.id)
-  .then(projects=>
-    { console.log(projects)
-      res.render('projects/detail', {projects})})
+  .then(project=>
+    {
+      // console.log(project)
+      res.render('projects/detail', project)})
   .catch(e=>next(e))
 })
 
