@@ -21,33 +21,29 @@ function isLoggedIn(req,res,next){
   if(req.isAuthenticated()){
     next()
   }else{
-    res.redirect('/login?next=' + req.path)
+    res.redirect(  '/login?next=' + req.path)
   }
 }
 
 
 //PROFILE
-//rouuter.post('/profile',  
-//isLoggedIn, 
-////upload.single('cover'),
-//uploadCloud.fields([{name:"cover", maxCount:1}, {name:"photoURL", maxCount:1}]),
-//(req,res)=>{
-//  if(req.files.photoURL) {
-//    //req.body.photoURL = "/uploads/" + req.files.photoURL[0].filename
-//    req.body.photoURL = req.files.photoURL[0].url
-//  }
-//  if(req.files.cover) {
-//    req.body.cover = req.files.cover[0].url
-//  } 
-//  User.findByIdAndUpdate(req.user._id, req.body)
-//  .then(()=>{
-//    res.redirect('/profile')
-//  })
-//
-//
-//router.get('/profile', isLoggedIn, (req,res)=>{
-//res.render('auth/profile', req.user)
-//
+router.post('/profile',  
+isLoggedIn, 
+uploadCloud.single('/profile'),
+(req,res)=>{
+  if(req.files.cover) {
+ req.body.profile = req.files.profile[0].url
+  } 
+  User.findByIdAndUpdate(req.user._id, req.body)
+ .then(()=>{
+    res.redirect('/profile')
+  })
+ 
+})
+
+router.get('/profile', isLoggedIn, (req,res)=>{
+  res.render('auth/profile', req.user)
+   })
 
 router.post('/profile',
 isLoggedIn,
@@ -72,6 +68,7 @@ router.post('/login', passport.authenticate('local'), (req,res,next)=>{
   console.log(req.query)
   if(req.query.next) res.redirect(req.query.next)
    else res.redirect('/profile')
+   
   })
 
 router.get('/login', isAuth, (req,res,next)=>{

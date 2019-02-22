@@ -1,1 +1,267 @@
-<h2>HOLO</h2>
+
+<section
+
+  {{#if cover}}
+  style="background-image:url('{{cover}}')"
+
+  {{/if}}
+ class="container">
+
+ 
+  <section class="background"></section>
+  {{#if photoURL}}
+  <div class="pic">
+    <div id="editPic">EDITAR</div>
+    <img src="{{photoURL}}" alt="{{username}}">
+  </div>
+  
+  {{else}}
+  <div class="pic">
+    <div id="editPic" >EDITAR</div>
+    <img 
+      src="https://scontent-lht6-1.cdninstagram.com/vp/93ef0eacfac596c1f56ae9020b866fe7/5CCC0F2E/t51.2885-19/s150x150/38147291_2231001206916597_6476698132750008320_n.jpg?_nc_ht=scontent-lht6-1.cdninstagram.com" 
+      alt="{{username}}"
+    >
+  </div>
+  {{/if}}
+
+
+
+<center>
+<section>
+  <div class="card-body">
+    <h3 class="card-title">{{name}}</h3>
+    <h4 class="card-text"> {{username}}</h4>
+  </div>
+    
+  </div>
+</section>
+</center>
+<section class="ec-stars-wrapper">
+  <h4>Points:</h4> <div class="Points"></div>
+    
+	<a href="#" data-value="1" title="Votar con 1 estrellas">&#9733;</a>
+	<a href="#" data-value="2" title="Votar con 2 estrellas">&#9733;</a>
+	<a href="#" data-value="3" title="Votar con 3 estrellas">&#9733;</a>
+	<a href="#" data-value="4" title="Votar con 4 estrellas">&#9733;</a>
+	<a href="#" data-value="5" title="Votar con 5 estrellas">&#9733;</a>
+</div>
+  </section>
+  <section class="bio">
+    <style type="text/css">
+/*<![CDATA[*/
+ 
+input#texto {
+color: #000;
+border: solid 1px #000;
+}
+ 
+/*]]>*/
+</style>
+<script type="text/javascript">
+//<![CDATA[
+function cambiarestado(){
+ 
+let valor = document.getElementById('texto').readOnly;
+if (valor == false){
+document.getElementById('texto').readOnly = true;  
+document.getElementById('texto').style.border = 'solid 1px #666';
+document.getElementById('texto').style.color = '#666';
+document.getElementById('cambia').value = 'Edit';  
+}else{
+document.getElementById('texto').readOnly = false;  
+document.getElementById('texto').style.border = 'solid 1px #000';
+document.getElementById('texto').style.color = 'black';
+document.getElementById('cambia').value = 'Save';   
+}
+ 
+}
+//]]>
+</script>
+</head>
+<body>
+<form action="#">
+<p>
+<input class="text" type="text" id="texto" value="" />
+<input class="adios" type="button" value="deshabilitar" id="cambia" onclick="cambiarestado();" /> <input class="hola" type="reset" value="borrar" /> 
+</p>
+</form>
+</body>
+</html>
+  </section>
+  </section>
+  
+
+  <div class="row">
+  <div class="col-sm-6">
+    <div class="tarjeta1">
+      <div class="card-one">
+        <a href="#" class="btn btn-primary">Universal Projects</a>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="col-sm-6">
+    <div class="tarjeta2">
+      <div class="card-two">
+        <a href="#" class="btn btn-primary">My projects</a>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="img1">
+  <img src="https://media.wsimag.com/attachments/7fe77763e603e29b4b2349dad59d4bc9a13194b4/store/fill/1090/613/75e1f9c578880bcd225ea622022c01c51d6c696e567849404bd5b56f64e8/La-insolita-felicidad-de-los-ninos-pobres.jpg" alt="444" width="250px" height="150px">
+</div>
+<div class="img2">
+  <img src="http://api1.columnis.com/uploads/032/images/Solidaridad.jpg" alt="555" width="250px" height="150px">
+</div>
+  
+
+<section class="info">
+  <form action="/profile" method="post" enctype="multipart/form-data" >
+
+    <input name="photoURL" id="photoInput" hidden type="file" accept="image/*">
+  </form>
+</section>
+
+
+
+<script>
+  
+    //listener for the photourl
+    document
+      .getElementById('editPic')
+      .addEventListener('click', function(){
+        document.getElementById('photoInput').click()
+      })
+    //listener para DESPUES de seleccionar la imagen
+  document
+    .getElementById('photoInput')
+    .addEventListener('change', function(){
+      document.querySelector('form').submit()
+    })
+</script>
+
+
+
+<style>
+.img2{
+  margin-left: 900px;
+  margin-top: -150px;
+  opacity: .5;
+}
+.img1{
+  margin-left:250px;
+  margin-top: -225px;
+  opacity: .8;
+
+}
+.card-two{
+  margin-left: 290px;
+  margin-top: 200px;
+}
+.card-one{
+  margin-left: 290px;
+  margin-top: 200px;
+}
+
+
+.background{
+  height: 500px;
+  width: 1150px;
+  background-color: rgb(116, 111, 111);
+  opacity: .2;
+  position: absolute;
+  margin-left: 0px;
+  margin-top: -160px;
+
+}
+.adios{
+  opacity: .5;
+  
+}
+.hola{
+  opacity: .5 ;
+}
+  
+
+.text{
+opacity: .5; 
+height: 50px;
+width: 400px;
+}
+
+
+.bio{
+ margin-left: 700px;
+margin-top: -50px;
+
+}
+
+.ec-stars-wrapper{
+margin-left: 200px;
+margin-top: -150px;
+
+
+}
+.card-body{
+  margin-top: 170px;
+}
+
+
+
+.pic{
+  width: 160px;
+  height: 160px;
+  position: absolute;
+  margin-left: 475px;
+  margin-top:-150px;
+  opacity: 150;
+}
+
+.pic div{
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top:0;
+  opacity: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all .3s ease;
+  color:black;
+  padding-top: 70px;
+  box-sizing: border-box;
+  text-align: center;
+}
+
+.pic div:hover{
+  opacity: .5;
+}
+
+.container img{
+  width: 100%;
+  height: 100%;
+  border-radius:50% ;
+  
+  
+
+}
+
+
+html{
+  margin:0;
+  padding: 0;
+}
+
+body {
+  margin: 0;
+  // padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+}
+
+a {
+  color: #00B7FF;
+}
+</style>
